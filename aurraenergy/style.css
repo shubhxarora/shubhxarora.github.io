@@ -1075,7 +1075,8 @@ svg.prod-brand-logo {
   width: auto !important;
 }
 
-.prod-card:hover .prod-brand-logo {
+.prod-card:hover .prod-brand-logo,
+.sector-card:hover .prod-brand-logo {
   filter: grayscale(0%) opacity(100%);
 }
 
