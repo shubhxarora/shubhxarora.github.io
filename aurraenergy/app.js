@@ -406,4 +406,72 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // --- STEED Lithium Gallery Interaction ---
+  const galleryThumbs = document.querySelectorAll('.gallery-thumb-btn');
+  const mainImg = document.getElementById('gallery-main-img');
+  const caption = document.getElementById('gallery-img-caption');
+
+  if (galleryThumbs.length && mainImg && caption) {
+    // Add transition style inline for ease of implementation
+    mainImg.style.transition = 'opacity 0.2s ease-in-out';
+    
+    galleryThumbs.forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        if (thumb.classList.contains('active')) return;
+        
+        // Remove active from all thumbs
+        galleryThumbs.forEach(t => t.classList.remove('active'));
+        
+        // Add active to clicked thumb
+        thumb.classList.add('active');
+        
+        // Update main image source, alt, and caption with smooth fade
+        const largeSrc = thumb.dataset.large;
+        const imgCaption = thumb.dataset.caption;
+        
+        mainImg.style.opacity = '0';
+        setTimeout(() => {
+          mainImg.src = largeSrc;
+          mainImg.alt = imgCaption;
+          caption.textContent = imgCaption;
+          mainImg.style.opacity = '1';
+        }, 200);
+      });
+    });
+  }
+
+  // --- STEED Model Inquiry Pre-fill ---
+  const modelInquireBtns = document.querySelectorAll('.btn-inquire-model, .btn-inquire-steed-card');
+  const contactCategory = document.getElementById('contact-category');
+  const contactMsg = document.getElementById('contact-msg');
+
+  if (modelInquireBtns.length && contactCategory && contactMsg) {
+    modelInquireBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        const modelName = btn.dataset.model;
+        
+        // Select "Steatite Lithium-Ion Battery Systems" category (which handles lithium-ion inquires)
+        contactCategory.value = 'lithium';
+        
+        // Set pre-fill message
+        contactMsg.value = `I am interested in the STEED Lithium-Ion battery solution: ${modelName}. Please send the technical sheet and an official proposal.`;
+        
+        // Scroll to the contact section
+        const targetSection = document.getElementById('contact');
+        if (targetSection) {
+          const headerOffset = 80;
+          const elementPosition = targetSection.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  }
 });

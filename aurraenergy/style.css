@@ -1752,3 +1752,183 @@ svg.partner-brand-logo {
   object-fit: contain;
   background: #ffffff;
 }
+
+/* ==========================================================================
+   STEED Lithium-Ion Brand Section Styles
+   ========================================================================== */
+
+#steed {
+  position: relative;
+  background: radial-gradient(at 0% 100%, rgba(15, 159, 110, 0.03) 0px, transparent 50%),
+              radial-gradient(at 100% 100%, rgba(0, 119, 182, 0.02) 0px, transparent 50%);
+}
+
+.steed-overview-card {
+  position: relative;
+}
+
+/* Mosaic & Image Gallery */
+.steed-mosaic-gallery {
+  height: 100%;
+}
+
+.mosaic-main-card {
+  transition: all var(--transition-normal);
+}
+
+.mosaic-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.mosaic-image-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.gallery-thumb-btn {
+  background: none;
+  border: 2px solid transparent;
+  padding: 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  height: 65px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.gallery-thumb-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-thumb-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(15, 159, 110, 0.3);
+}
+
+.gallery-thumb-btn.active {
+  border-color: var(--accent-lime);
+  box-shadow: 0 0 10px rgba(15, 159, 110, 0.25);
+  transform: scale(1.03);
+}
+
+/* Feature & Application Cards */
+.steed-feature-card {
+  transition: all var(--transition-normal);
+}
+
+.steed-feature-card:hover {
+  border-color: rgba(15, 159, 110, 0.35) !important;
+  box-shadow: 0 20px 40px -15px rgba(15, 159, 110, 0.08), var(--glow-card) !important;
+}
+
+.steed-app-card:hover {
+  border-color: rgba(15, 159, 110, 0.35) !important;
+  box-shadow: 0 20px 40px -15px rgba(15, 159, 110, 0.08), var(--glow-card) !important;
+}
+
+/* Spec Tables Styles */
+.steed-specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.steed-table-container {
+  overflow-x: auto;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-light);
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.steed-specs-table th {
+  background: rgba(15, 159, 110, 0.06);
+  color: var(--text-primary);
+  font-family: var(--font-headings);
+  font-weight: 700;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.95rem;
+}
+
+.steed-specs-table td {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+  vertical-align: middle;
+}
+
+.steed-specs-table tbody tr {
+  transition: all var(--transition-fast);
+}
+
+.steed-specs-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.steed-specs-table tbody tr:hover td {
+  background: rgba(15, 159, 110, 0.02);
+  color: var(--text-primary);
+}
+
+.steed-specs-table .model-cell {
+  font-family: var(--font-headings);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.steed-specs-table .download-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.steed-specs-table .download-link:hover {
+  color: var(--accent-lime);
+  transform: translateX(2px);
+}
+
+.steed-specs-table .btn-inquire-model {
+  padding: 0.4rem 1rem;
+  font-size: 0.8rem;
+  border-radius: 30px;
+  border-color: rgba(15, 159, 110, 0.25);
+  color: var(--accent-lime);
+  background: transparent;
+}
+
+.steed-specs-table .btn-inquire-model:hover {
+  background: linear-gradient(135deg, var(--accent-lime), #059669);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(15, 159, 110, 0.15);
+}
+
+@media (max-width: 768px) {
+  .steed-specs-table th, .steed-specs-table td {
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+  }
+  .steed-download-card {
+    padding: 1.5rem !important;
+  }
+}
+
+
